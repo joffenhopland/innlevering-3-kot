@@ -4,6 +4,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.RecyclerView
+import com.example.art_photo.R
 //import androidx.recyclerview.widget.RecyclerView
 import com.example.art_photo.databinding.FragmentOverviewBinding
 import com.example.art_photo.overview.OverviewViewModel
@@ -12,7 +14,7 @@ import com.example.art_photo.overview.PhotoGridAdapter
 /**
  * This fragment shows the the status of the Art photod photos web services transaction.
  */
-class OverviewFragment : Fragment() {
+class OverviewFragment : Fragment(R.layout.fragment_overview) {
 
     private val viewModel: OverviewViewModel by viewModels()
 

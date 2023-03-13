@@ -1,5 +1,6 @@
 package com.example.art_photo
 
+import OverviewFragment
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,6 +11,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.art_photo.data.network.ArtPhotoApi
 import com.example.art_photo.data.network.models.ArtPhoto
+import com.example.art_photo.databinding.ActivityMainBinding
 import com.example.art_photo.overview.PhotoGridAdapter
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
@@ -20,10 +22,23 @@ import retrofit2.http.GET
 class MainActivity : AppCompatActivity() {
 //    private lateinit var photoList: List<ArtPhoto>
 
+    lateinit var binding: ActivityMainBinding
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        //setContentView(R.layout.activity_main)
+
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        binding.overviewFragmentBtn.setOnClickListener {
+            val fragmentManager = supportFragmentManager
+            val fragmentTransaction = fragmentManager.beginTransaction()
+            fragmentTransaction.replace(R.id.fragmentContainer, OverviewFragment())
+            fragmentTransaction.commit()
+        }
 
 //        // Henter RecyclerView fra XML-filen
 //        val recyclerView = findViewById<RecyclerView>(R.id.recycler_view)
