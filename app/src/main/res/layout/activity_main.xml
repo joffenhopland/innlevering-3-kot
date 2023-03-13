@@ -1,8 +1,28 @@
-<androidx.fragment.app.FragmentContainerView
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/overviewFragment"
     android:name="OverviewFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:layout="@layout/fragment_overview" />
+    tools:layout="@layout/fragment_overview"
+    tools:context=".MainActivity">
+
+    <androidx.fragment.app.FragmentContainerView
+        android:layout_width="match_parent"
+        android:layout_height="600dp"
+        android:id="@+id/fragmentContainer"/>
+    
+    <Button
+        android:id="@+id/overviewFragmentBtn"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:backgroundTint="@color/black"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="50dp"
+        android:layout_marginStart="30dp"
+        android:text="Overview fragment"/>
+
+
+</RelativeLayout>
