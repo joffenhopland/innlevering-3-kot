@@ -1,4 +1,6 @@
-package com.example.art_photo.data.remote.models
+package com.example.art_photo.data.network.models
+
+import com.squareup.moshi.Json
 
 data class ArtPhoto(
     @Json(name = "albumId") val albumId: Int=-1,
