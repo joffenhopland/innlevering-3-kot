@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- husk å legge til safeargs!-->
+
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/startScreenFragment">
+
+    <fragment
+        android:id="@+id/startScreenFragment"
+        android:name="com.example.art_photo.startScreen.StartScreenFragment"
+        android:label="StartScreenFragment">
+        <action
+            android:id="@+id/action_startScreenFragment_to_overviewFragment"
+            app:destination="@id/overviewFragment" />
+        <action
+            android:id="@+id/action_startScreenFragment_to_pictureDetailFragment"
+            app:destination="@id/pictureDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/overviewFragment"
+        android:name="OverviewFragment"
+        android:label="OverviewFragment" >
+        <action
+            android:id="@+id/action_overviewFragment_to_pictureDetailFragment"
+            app:destination="@id/pictureDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pictureDetailFragment"
+        android:name="com.example.art_photo.pictureDetail.PictureDetailFragment"
+        android:label="PictureDetailFragment" >
+        <action
+            android:id="@+id/action_pictureDetailFragment_to_overviewFragment"
+            app:destination="@id/overviewFragment" />
+        <action
+            android:id="@+id/action_pictureDetailFragment_to_startScreenFragment"
+            app:destination="@id/startScreenFragment" />
+    </fragment>
+</navigation>
