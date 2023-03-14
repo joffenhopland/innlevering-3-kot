@@ -25,7 +25,7 @@ import retrofit2.http.GET
 class MainActivity : AppCompatActivity() {
 //    private lateinit var photoList: List<ArtPhoto>
 
-    lateinit var binding: ActivityMainBinding
+//    lateinit var binding: ActivityMainBinding
 
     private lateinit var navController: NavController
 
@@ -33,11 +33,11 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_main)
 
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-
+//        binding = ActivityMainBinding.inflate(layoutInflater)
+//        setContentView(binding.root)
+//
         val navHostFragment = supportFragmentManager
             .findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         navController = navHostFragment.navController

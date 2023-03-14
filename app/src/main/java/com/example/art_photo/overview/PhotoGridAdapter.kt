@@ -25,16 +25,18 @@ class PhotoGridAdapter
             ArtPhotoViewHolder {
         return ArtPhotoViewHolder(
             GridViewItemBinding.inflate(
-            LayoutInflater.from(parent.context)))
+            LayoutInflater.from(parent.context),
+                parent,
+                false))
     }
 
     override fun onBindViewHolder(holder:
                                   ArtPhotoViewHolder, position: Int) {
         val artPhoto = getItem(position)
+        holder.bind(artPhoto)
         holder.itemView.setOnClickListener {
 //            onItemClicked(artPhoto)
         }
-        holder.bind(artPhoto)
     }
 
     companion object DiffCallback : DiffUtil.ItemCallback<ArtPhoto>() {
